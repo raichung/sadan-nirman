@@ -1,0 +1,53 @@
+{
+  "name": "Sadan Nirman",
+  "description": "Revitalizing spaces with precision and excellence, we transform your vision into reality, creating the perfect home tailored to your needs.",
+  "all-projects": "All Projects",
+  "contact-us": "Contact Us",
+  "read-more": "Read More",
+  "hero-heading": {
+    "part-1": "Expert",
+    "part-2": "Constrcution",
+    "part-3": "Services for",
+    "part-4": "every Project"
+  },
+  "hero-heading-2": {
+    "part-1": "Our Business Strength",
+    "part-2": "Across Construction",
+    "part-3": "And Regeneration in the",
+    "part-4": "built environment.",
+    "description": "We excel in construction and regeneration within the built environment, combining innovation and expertise to enhance both new developments and existing structures. Our focus on quality, efficiency, and sustainability ensures exceptional results that exceed expectations and drive value."
+  },
+  "project-heading": {
+    "part-1": "Some of",
+    "part-2": "Our Projects"
+  },
+  "faq-heading": {
+    "part-1": "Frequently Asked",
+    "part-2": "Questions"
+  },
+  "review-heading": {
+    "part-1": "What People Say",
+    "part-2": "About Us"
+  },
+  "quote-heading": "Get a Free Quote",
+  "services-heading": "Services We Provide",
+  "navbar": {
+    "about-us": "About Us",
+    "projects": "Projects",
+    "services": "Services",
+    "reviews": "Reviews",
+    "contact-us": "Contact Us",
+    "faqs": "FAQs",
+    "write-a-review": "Write a Review"
+  },
+  "footer": {
+    "developed-and-maintained-by": "Developed & Maintained by",
+    "copyright": "© Sadan Nirman. All Right Reserved.",
+    "cta-description": "Now is the best time to start with your renovation.",
+    "get-a-quote": "Get A Quote",
+    "address": "M8XH+FGX, Kathmandu 44600",
+    "address-label": "Address",
+    "phone-label": "Company Phone",
+    "quick-links": "Quick Links"
+  }
+}

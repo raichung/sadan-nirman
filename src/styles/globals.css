@@ -1,0 +1,168 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 30, 5%, 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30, 5%, 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 79, 38%, 87%;
+    --accent-foreground: 30, 5%, 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30, 4%, 69%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply m-0
+    h-full
+    w-full
+    min-w-[320px]
+    overflow-x-hidden
+		bg-background
+		text-[1rem]
+		font-normal
+		leading-normal
+		text-foreground
+		antialiased
+		lg:leading-[1.67]
+		xl:text-[1.125rem];
+  }
+
+  picture {
+    @apply mb-4
+		block;
+  }
+
+  img {
+    @apply h-auto
+		w-auto
+		max-w-full
+		align-middle;
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    @apply mb-2
+		font-bold
+		capitalize
+		leading-tight
+		2xl:mb-4;
+  }
+
+  h1,
+  .h1 {
+    @apply /*54px*/
+		text-[2.25rem]
+		lg:text-[2.625rem]
+		2xl:text-[3.375rem];
+  }
+
+  h2,
+  .h2 {
+    @apply /*48px*/ text-[1.75rem]
+		lg:text-[2.25rem]
+		2xl:text-[3rem];
+  }
+
+  h3,
+  .h3 {
+    @apply /*30px*/ text-[1.375rem]
+		lg:text-[1.625rem]
+		2xl:text-[1.875rem];
+  }
+
+  h4,
+  .h4 {
+    @apply /*24px*/ text-[1.25rem]
+		lg:text-[1.375rem]
+		2xl:text-[1.5rem];
+  }
+
+  h5,
+  .h5 {
+    @apply /*20px*/ text-[1rem]
+		lg:text-[1.125rem]
+		2xl:text-[1.25rem];
+  }
+
+  h6,
+  .h6 {
+    @apply /*18px*/ text-sm
+		2xl:text-[1.125rem];
+  }
+
+  p,
+  .p {
+    @apply mb-2
+		2xl:mb-4;
+  }
+}
