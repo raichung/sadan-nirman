@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/sahrohit/sadan-nirman" style="font-size:60px;">
-   <img alt="Brand Logo" src="public/logo.avif"
+   <img alt="Brand Logo" src="public/sadan_nirman_logo.png"
    height="150"
    style="border-radius:50%" />
   </a>

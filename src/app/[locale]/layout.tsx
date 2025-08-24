@@ -65,7 +65,13 @@ export const metadata: Metadata = {
     creator: "@sahrohit",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/sadan_nirman_logo.png", type: "image/png" },
+      { url: "/sadan_nirman_logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/sadan_nirman_logo.png", sizes: "16x16", type: "image/png" },
+    ],
+    shortcut: "/sadan_nirman_logo.png",
+    apple: "/sadan_nirman_logo.png",
   },
   manifest: `${siteConfig.url.base}/site.webmanifest`,
 };

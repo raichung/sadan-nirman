@@ -1,4 +1,4 @@
-import { LuCommand, LuMoon, LuSunMedium } from "react-icons/lu";
+import { LuMoon, LuSunMedium } from "react-icons/lu";
 
 export type IconKeys = keyof typeof icons;
 
@@ -7,7 +7,6 @@ type IconsType = {
 };
 
 const icons = {
-  logo: LuCommand,
   sun: LuSunMedium,
   moon: LuMoon,
 };

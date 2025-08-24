@@ -23,8 +23,8 @@ export const SOCIALS = [
   },
   {
     label: "Phone",
-    href: "tel:+9779818506752",
+    href: "tel:+9779802343596",
     icon: LuPhone,
-    tooltip: "+977 9818506752",
+    tooltip: "+977 9802343596",
   },
 ];

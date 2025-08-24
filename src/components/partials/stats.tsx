@@ -17,7 +17,7 @@ const Stats = async () => {
               {number}
               <sup>+</sup>
             </blockquote>
-            <p className="line-clamp-3">{description[locale]}</p>
+            <p>{description[locale]}</p>
           </div>
         ))}
       </div>

@@ -1,14 +1,14 @@
 {
-  "name": "Next Static Starter: Perfect for all your static development needs.",
-  "short_name": "Next Static Starter",
+  "name": "Sadan Nirman - Waterproofing & Construction Services in Nepal",
+  "short_name": "Sadan Nirman",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/sadan_nirman_logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/sadan_nirman_logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }

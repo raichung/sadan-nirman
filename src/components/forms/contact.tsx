@@ -42,6 +42,9 @@ const formSchema = z.object({
     .max(15, {
       message: "Invalid Phone Number",
     }),
+  address: z.string().min(1, {
+    message: "Required",
+  }),
   booking_date: z.coerce.date(),
   description: z.string().optional(),
 });
@@ -55,6 +58,7 @@ const ContactForm = ({ className }: { className?: string }) => {
     defaultValues: {
       name: "",
       contact_number: "",
+      address: "",
       booking_date: new Date(),
       description: "",
     },
@@ -123,6 +127,26 @@ const ContactForm = ({ className }: { className?: string }) => {
                   <Input
                     autoComplete="tel"
                     placeholder="98XXXXXXXX"
+                    {...field}
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="address"
+            render={({ field }) => (
+              <FormItem>
+                <div className="flex items-center justify-between text-lg">
+                  <FormLabel>Address</FormLabel>
+                  <FormMessage className="mb-0" />
+                </div>
+                <FormControl>
+                  <Input
+                    autoComplete="address-line1"
+                    placeholder="123 Main St, Kathmandu"
                     {...field}
                   />
                 </FormControl>

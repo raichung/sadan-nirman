@@ -2,23 +2,23 @@
 export const REVIEWS = [
   {
     user: {
-      name: "Waylon Bilbrey",
+      name: "Priya Chaudhary",
       link: "https://www.google.com/maps/contrib/107691056156160235121?hl=en-US&sa=X&ved=2ahUKEwiUituIlpTvAhVYCc0KHbvTCrgQvvQBegQIARAx",
       thumbnail:
-        "https://lh3.googleusercontent.com/a-/AOh14GjOj6Wjfk1kSYjhvH7WIBNMdl4nPj6FvUhvYcR6=s40-c0x00000000-cc-rp",
+        "https://ui-avatars.com/api/?name=Priya+Chaudhary&background=4F46E5&color=fff&size=80&font-size=0.4&bold=true",
       reviews: 1,
     },
-    rating: 4,
+    rating: 5,
     date: "a week ago",
     snippet:
-      "I've been here multiple times. The coffee itself is just average to me. The service is good (the people working are nice). The aesthetic is obviously what brings the place some fame. A little overpriced (even for NY). A very small cup for $6 where I feel like the price comes from the top rainbow foam decor , when I'm going to cover it anyways. If it's for an insta pic then it may be worth it?",
+      "Working with Sadan Nirman Pvt. Ltd. was a great experience. The team listened to our needs, kept us updated throughout, and completed the project on time with excellent quality. We truly appreciate their dedication.",
   },
   {
     user: {
-      name: "Amber Grace Sale",
+      name: "Rohit Sah",
       link: "https://www.google.com/maps/contrib/106390058588469541899?hl=en-US&sa=X&ved=2ahUKEwiUituIlpTvAhVYCc0KHbvTCrgQvvQBegQIARA7",
       thumbnail:
-        "https://lh3.googleusercontent.com/a-/AOh14Gj84nHu_9V_0V4yRbZcr-8ZTYAHua6gUBP8fC7W=s40-c0x00000000-cc-rp-ba3",
+        "https://ui-avatars.com/api/?name=Rohit+Sah&background=059669&color=fff&size=80&font-size=0.4&bold=true",
       local_guide: true,
       reviews: 33,
       photos: 17,
@@ -26,7 +26,7 @@ export const REVIEWS = [
     rating: 5,
     date: "2 years ago",
     snippet:
-      "They really take pride in their espresso roast here and the staff is extremely knowledgeable on the subject. It’s also a GREAT place to do work although a table is no guarantee; you might have to wait for a bit. My almond milk cappuccino was very acidic at the end which wasn’t expected but I could still tell the bean was high quality. Their larger lattés they put in a tall glass cup which looks really really cool. Would definitely go again.",
+      "We couldn't be happier with the service from Sadan Nirman. The entire team was professional, respectful, and efficient. They handled everything smoothly, and the final result was exactly what we had hoped for.",
     likes: 2,
     images: [
       "https://lh5.googleusercontent.com/p/AF1QipMup24_dHrWtNN4ZD70EPsiRMf_tykcUkPw6A1H=w100-h100-p-n-k-no",
@@ -34,15 +34,15 @@ export const REVIEWS = [
   },
   {
     user: {
-      name: "Kelvin Petar",
+      name: "Dipesh Gurung",
       link: "https://www.google.com/maps/contrib/100859090874785206875?hl=en-US&sa=X&ved=2ahUKEwiUituIlpTvAhVYCc0KHbvTCrgQvvQBegQIARBG",
       thumbnail:
-        "https://lh3.googleusercontent.com/a-/AOh14GhdIvUDamzfPqbYIpwhnGJV2XWSi77iVXfEsiKS=s40-c0x00000000-cc-rp",
+        "https://ui-avatars.com/api/?name=Dipesh+Gurung&background=DC2626&color=fff&size=80&font-size=0.4&bold=true",
       reviews: 3,
     },
     rating: 4,
     date: "3 months ago",
     snippet:
-      "Stumptown Cafe is the perfect place to work or catch up with friends. Never too loud, never too dead. Their lattes and deliciously addicting and the toasts are tasty as well. Wifi is always fast, which is a huge plus! The staff are the friendliest, I highly recommend this place!",
+      "Sadan Nirman Pvt. Ltd. turned our vision into reality. Their attention to detail and commitment to quality work really stood out. We felt supported throughout the process and would definitely recommend them.",
   },
 ];

@@ -5,8 +5,8 @@ import { type SiteConfig } from "@/types";
 import { env } from "@/env.mjs";
 
 export const siteConfig: SiteConfig = {
-  name: "Waterproofing & Construction Services in Nepal | Sadan Nirman",
-  author: "sahrohit",
+  name: "Sadan Nirman | Waterproofing & Construction Services in Nepal",
+  author: "raichung",
   description:
     "Expert waterproofing, construction, and home repair services in Nepal. Professional house inspections and renovations by Sadan Nirman. Quality guaranteed.",
   keywords: [
