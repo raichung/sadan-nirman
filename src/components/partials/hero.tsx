@@ -14,7 +14,17 @@ const HeroSection = async () => {
     <>
       <section className="bg-accent py-4">
         <div className="container grid grid-cols-1 gap-8 md:grid-cols-2">
-          <div className="bg-no-repeats relative z-[2] flex flex-col justify-between gap-4 bg-[url(/hero.avif)] bg-cover p-8 before:absolute before:inset-0 before:z-[-1] before:bg-black/60 ">
+          <div className="relative z-[2] flex flex-col justify-between gap-4 p-8 before:absolute before:inset-0 before:z-[-1] before:bg-black/60">
+            <div className="absolute inset-0 z-[-2]">
+              <Image
+                src="/hero.avif"
+                alt="Hero Background"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
             <h1 className="z-10 font-extrabold uppercase leading-snug tracking-wide text-white">
               {t("hero-heading.part-1")} <br />{" "}
               <span className="text-accent"> {t("hero-heading.part-2")}</span>
@@ -36,6 +46,7 @@ const HeroSection = async () => {
               className="h-[60vh] w-full object-cover grayscale"
               width={1368}
               height={446}
+              sizes="100vw"
             />
           </picture>
         </div>
@@ -65,6 +76,7 @@ const HeroSection = async () => {
               className="h-[60vh] max-h-[500px] w-full object-cover grayscale"
               width={1368}
               height={446}
+              sizes="100vw"
             />
           </picture>
         </div>
