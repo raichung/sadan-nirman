@@ -46,7 +46,7 @@ const FAQ = async () => {
         </div>
         <picture className="h-screen w-full">
           <Image
-            src="/hero4.avif"
+            src="/pic_06.jpg"
             alt="Hero Image"
             className="h-screen w-full object-cover object-top"
             width={676}

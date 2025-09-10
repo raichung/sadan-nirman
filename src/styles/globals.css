@@ -22,8 +22,22 @@
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
 
-    --accent: 79, 38%, 87%;
-    --accent-foreground: 30, 5%, 15%;
+    /* ---------- BRAND ACCENT: darker red-orange ---------- */
+    /* pale tint for subtle backgrounds (keeps visual rhythm) */
+    --accent: 18, 38%, 82%;
+
+    /* readable text on pale accent */
+    --accent-foreground: 18, 6%, 15%;
+
+    /* stronger tones for buttons / CTAs / emphasis (darker) */
+    --accent-100: 18, 40%, 94%;
+    --accent-300: 18, 60%, 70%;
+    --accent-500: 14, 75%, 41%; /* darker primary CTA (approx #c84a2d) */
+    --accent-700: 14, 78%, 30%; /* deep emphasis / hover */
+
+    /* UI utilities */
+    --accent-ring: 14, 90%, 48%;
+    --accent-border: 14, 30%, 72%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -54,8 +68,17 @@
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
 
-    --accent: 0 0% 14.9%;
+    /* ---------- DARK THEME ACCENT: richer & darker ---------- */
+    --accent: 14, 70%, 38%;
     --accent-foreground: 0 0% 98%;
+
+    --accent-100: 14, 50%, 48%;
+    --accent-300: 14, 70%, 40%;
+    --accent-500: 14, 80%, 34%;
+    --accent-700: 14, 90%, 24%;
+
+    --accent-ring: 14, 90%, 40%;
+    --accent-border: 14, 40%, 24%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;

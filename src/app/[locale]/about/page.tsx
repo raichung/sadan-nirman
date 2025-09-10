@@ -1,30 +1,55 @@
+import { type Metadata } from "next";
 import Image from "next/image";
-import { getLocale, getTranslations } from "next-intl/server";
-import {
-  LuArrowRight,
-  LuBrain,
-  LuCheckCircle2,
-  LuWorkflow,
-} from "react-icons/lu";
+import { getLocale } from "next-intl/server";
+import { LuBrain, LuCheckCircle2, LuWorkflow } from "react-icons/lu";
 
-import { PROJECTS } from "@/config/projects";
-import { Link } from "@/lib/navigation";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { siteConfig } from "@/config/site";
+import Breadcrumb from "@/components/breadcrumb";
+import ProjectsSection from "@/components/partials/projects-section";
+
+export const metadata: Metadata = {
+  title: "About Us - Sadan Nirman Construction Company",
+  description:
+    "Learn about Sadan Nirman, Nepal's leading construction and waterproofing company. Professional workers, guaranteed quality, and wide experience in residential and commercial projects.",
+  keywords: [
+    "About Sadan Nirman",
+    "Construction company Nepal",
+    "Waterproofing company Kathmandu",
+    "Building contractors Nepal",
+    "Construction team Nepal",
+    "Professional construction services",
+  ],
+  openGraph: {
+    title: "About Us - Sadan Nirman Construction Company",
+    description:
+      "Learn about Sadan Nirman, Nepal's leading construction and waterproofing company with professional workers and guaranteed quality.",
+    url: `${siteConfig.url.base}/about`,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "About Sadan Nirman Construction Company",
+      },
+    ],
+  },
+  twitter: {
+    title: "About Us - Sadan Nirman Construction Company",
+    description:
+      "Learn about Sadan Nirman, Nepal's leading construction and waterproofing company with professional workers and guaranteed quality.",
+    images: [siteConfig.ogImage],
+  },
+  alternates: {
+    canonical: `${siteConfig.url.base}/about`,
+  },
+};
 
 const AboutPage = async () => {
-  const t = await getTranslations();
   const locale = await getLocale();
 
   return (
     <>
+      <Breadcrumb items={[{ name: "About Us", href: "/about" }]} />
       {/* About Us Section */}
       <section
         id="about-us"
@@ -33,9 +58,12 @@ const AboutPage = async () => {
         <div className="container grid grid-cols-1 gap-4 md:grid-cols-2">
           <div>
             <h2 className="uppercase">
-              We&apos;re Nepal&apos;s <br /> Leading Industry <br /> Corporation
+              We&apos;re Nepal&apos;s <br /> Leading Construction <br /> Company
             </h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+            <p>
+              Building Nepal&apos;s future with precision, quality, and
+              innovation in every project we undertake.
+            </p>
             <div className="my-12 flex flex-col gap-4">
               <div className="flex gap-6">
                 <div>
@@ -46,9 +74,9 @@ const AboutPage = async () => {
                 <div className="max-w-md">
                   <h3 className="uppercase">Professional Workers</h3>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Itaque autem delectus illum commodi? Libero, illum
-                    consequatur.{" "}
+                    Our team consists of certified engineers, skilled craftsmen,
+                    and experienced project managers who bring years of
+                    expertise to every construction project.
                   </p>
                 </div>
               </div>
@@ -59,11 +87,11 @@ const AboutPage = async () => {
                   </div>
                 </div>
                 <div className="max-w-md">
-                  <h3 className="uppercase">Gauranteed Quality</h3>
+                  <h3 className="uppercase">Guaranteed Quality</h3>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Itaque autem delectus illum commodi? Libero, illum
-                    consequatur.{" "}
+                    We use only the finest materials and follow strict quality
+                    control measures to ensure every project meets the highest
+                    standards of construction excellence.
                   </p>
                 </div>
               </div>
@@ -76,9 +104,9 @@ const AboutPage = async () => {
                 <div className="max-w-md">
                   <h3 className="uppercase">Wide Experience</h3>
                   <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Itaque autem delectus illum commodi? Libero, illum
-                    consequatur.{" "}
+                    With over a decade of experience in residential, commercial,
+                    and industrial construction, we have successfully completed
+                    hundreds of projects across Nepal.
                   </p>
                 </div>
               </div>
@@ -97,51 +125,7 @@ const AboutPage = async () => {
       </section>
 
       {/* Our Projects */}
-      <section id="projects" className="py-10">
-        <div className="container">
-          <div className="flex flex-col items-center justify-between md:flex-row">
-            <div>
-              <h2 className="uppercase">
-                {t("project-heading.part-1")}
-                <br />
-                {t("project-heading.part-2")}
-              </h2>
-            </div>
-            <Button size="xl" variant="accent">
-              {t("all-projects")} <LuArrowRight className="ml-2" />
-            </Button>
-          </div>
-          <div className="grid grid-cols-1 gap-12 py-10 md:grid-cols-3">
-            {PROJECTS.map(({ date, description, href, image, name }) => (
-              <Card key={name.en}>
-                <picture className="h-[40vh] w-full">
-                  <Image
-                    src={image}
-                    alt="Hero Image"
-                    className="h-[40vh] w-full object-cover grayscale"
-                    width={1200}
-                    height={1200}
-                  />
-                </picture>
-                <CardHeader>
-                  <CardTitle className="uppercase">{name[locale]}</CardTitle>
-                  <CardDescription>{date}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p>{description[locale]}</p>
-                  <Separator />
-                  <Link
-                    href={href}
-                    className={buttonVariants({ variant: "link-hover-end" })}
-                  >
-                    {t("read-more")} <LuArrowRight className="ml-2" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsSection locale={locale} />
     </>
   );
 };

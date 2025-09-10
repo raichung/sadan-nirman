@@ -8,6 +8,25 @@ export type SiteConfig = {
     author: string;
   };
   ogImage: string;
+  organization: {
+    name: string;
+    url: string;
+    logo: string;
+    description: string;
+    address: {
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      postalCode: string;
+      addressCountry: string;
+    };
+    contactPoint: {
+      telephone: string;
+      contactType: string;
+      areaServed: string;
+    };
+    sameAs: string[];
+  };
 };
 
 export type SubscriptionPlan = {

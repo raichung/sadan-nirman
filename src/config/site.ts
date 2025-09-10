@@ -30,5 +30,27 @@ export const siteConfig: SiteConfig = {
     base: env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
     author: "https://sahrohit.com.np",
   },
-  ogImage: `/opengraph-image.jpg`,
+  ogImage: `${env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/opengraph-image.jpg`,
+  organization: {
+    name: "Sadan Nirman Construction Company",
+    url: env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
+    logo: `${env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"}/sadan_nirman_logo.png`,
+    description: "Leading construction and waterproofing company in Nepal",
+    address: {
+      streetAddress: "Anamnagar",
+      addressLocality: "Kathmandu",
+      addressRegion: "Bagmati",
+      postalCode: "44600",
+      addressCountry: "NP",
+    },
+    contactPoint: {
+      telephone: "+977-1-XXXXXXXX",
+      contactType: "customer service",
+      areaServed: "NP",
+    },
+    sameAs: [
+      "https://www.facebook.com/sadannirman",
+      "https://www.linkedin.com/company/sadan-nirman",
+    ],
+  },
 };
