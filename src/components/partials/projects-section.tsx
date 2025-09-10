@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { LuArrowRight } from "react-icons/lu";
 
 import { PROJECTS } from "@/config/projects";
+import { Link } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -50,9 +51,11 @@ const ProjectsSection = ({ locale }: ProjectsSectionProps) => {
                 {t("project-heading.part-2")}
               </h2>
             </div>
-            <Button size="xl" variant="accent">
-              {t("all-projects")} <LuArrowRight className="ml-2" />
-            </Button>
+            <Link href="/about#projects">
+              <Button size="xl" variant="accent">
+                {t("all-projects")} <LuArrowRight className="ml-2" />
+              </Button>
+            </Link>
           </div>
           <div className="grid grid-cols-1 gap-12 py-10 md:grid-cols-3">
             {PROJECTS.map((project) => (

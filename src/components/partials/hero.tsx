@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { LuArrowRight } from "react-icons/lu";
 
+import { Link } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
 
 import ContactForm from "../forms/contact";
@@ -23,9 +24,11 @@ const HeroSection = async () => {
               <br /> {t("hero-heading.part-3")}
               <br /> {t("hero-heading.part-4")}
             </h1>
-            <Button size="xl" variant="accent" className="self-start">
-              {t("all-projects")} <LuArrowRight className="ml-2" />
-            </Button>
+            <Link href="/about#projects">
+              <Button size="xl" variant="accent" className="self-start">
+                {t("all-projects")} <LuArrowRight className="ml-2" />
+              </Button>
+            </Link>
           </div>
           <ContactForm />
         </div>
