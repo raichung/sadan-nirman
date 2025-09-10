@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
+import dynamic from "next/dynamic";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
@@ -11,10 +12,19 @@ import { locales } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
 import Analytics from "@/components/analytics";
+import PerformanceOptimizer from "@/components/performance-optimizer";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
-import ModalProvider from "@/components/shared/modal-provider";
+import StructuredData from "@/components/structured-data";
 import { ThemeProvider } from "@/components/theme-provider";
+
+// Dynamically import non-critical components
+const ModalProvider = dynamic(
+  () => import("@/components/shared/modal-provider"),
+  {
+    ssr: false,
+  },
+);
 
 const jakatra = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
@@ -66,12 +76,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/sadan_nirman_logo.png", type: "image/png" },
-      { url: "/sadan_nirman_logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/sadan_nirman_logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    shortcut: "/sadan_nirman_logo.png",
-    apple: "/sadan_nirman_logo.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url.base}/site.webmanifest`,
 };
@@ -93,7 +103,33 @@ const RootLayout = async ({
 
   return (
     <html lang={locale === "np" ? "ne" : locale} suppressHydrationWarning>
-      <head />
+      <head>
+        <StructuredData />
+        <link
+          rel="canonical"
+          href={`${siteConfig.url.base}${locale === "en" ? "" : `/${locale}`}`}
+        />
+        <link rel="alternate" href={`${siteConfig.url.base}/`} hrefLang="en" />
+        <link
+          rel="alternate"
+          href={`${siteConfig.url.base}/np`}
+          hrefLang="ne"
+        />
+        <link
+          rel="alternate"
+          href={`${siteConfig.url.base}/`}
+          hrefLang="x-default"
+        />
+        {/* Preload critical resources */}
+        <link rel="preload" href="/pic_01.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/hero2.avif" as="image" type="image/avif" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
         className={cn(
           "min-h-screen bg-background antialiased",
@@ -112,6 +148,7 @@ const RootLayout = async ({
             <Toaster richColors />
             <ModalProvider />
             <Analytics />
+            <PerformanceOptimizer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

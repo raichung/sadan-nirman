@@ -10,7 +10,7 @@ export const LINKS = [
   {
     key: "projects",
     label: "Projects",
-    href: "/#projects",
+    href: "/about#projects",
     isExternal: false,
   },
   {

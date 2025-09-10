@@ -3,18 +3,35 @@ import { type MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = siteConfig.url.base;
+  const currentDate = new Date();
+
   return [
+    // English pages
     {
-      url: siteConfig.url.base,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
+      url: baseUrl,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
       priority: 1,
     },
     {
-      url: `${siteConfig.url.base}/about`,
-      lastModified: new Date(),
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
       changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    // Nepali pages
+    {
+      url: `${baseUrl}/np`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/np/about`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.8,
     },
   ];
 }

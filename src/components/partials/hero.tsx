@@ -2,10 +2,12 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { LuArrowRight } from "react-icons/lu";
 
+import { Link } from "@/lib/navigation";
 import { Button } from "@/components/ui/button";
 
 import ContactForm from "../forms/contact";
 import { TriggerModalButton } from "../shared/contact-modal";
+import HeroSlideshow from "./hero-slideshow";
 
 const HeroSection = async () => {
   const t = await getTranslations();
@@ -15,25 +17,18 @@ const HeroSection = async () => {
       <section className="bg-accent py-4">
         <div className="container grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="relative z-[2] flex flex-col justify-between gap-4 p-8 before:absolute before:inset-0 before:z-[-1] before:bg-black/60">
-            <div className="absolute inset-0 z-[-2]">
-              <Image
-                src="/hero.avif"
-                alt="Hero Background"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
+            <HeroSlideshow />
             <h1 className="z-10 font-extrabold uppercase leading-snug tracking-wide text-white">
               {t("hero-heading.part-1")} <br />{" "}
               <span className="text-accent"> {t("hero-heading.part-2")}</span>
               <br /> {t("hero-heading.part-3")}
               <br /> {t("hero-heading.part-4")}
             </h1>
-            <Button size="xl" variant="accent" className="self-start">
-              {t("all-projects")} <LuArrowRight className="ml-2" />
-            </Button>
+            <Link href="/about#projects">
+              <Button size="xl" variant="accent" className="self-start">
+                {t("all-projects")} <LuArrowRight className="ml-2" />
+              </Button>
+            </Link>
           </div>
           <ContactForm />
         </div>
@@ -43,10 +38,13 @@ const HeroSection = async () => {
               fetchPriority="high"
               src="/hero2.avif"
               alt="Hero Image"
-              className="h-[60vh] w-full object-cover grayscale"
+              className="h-[60vh] w-full object-cover"
               width={1368}
               height={446}
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+              quality={85}
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
             />
           </picture>
         </div>
@@ -73,10 +71,12 @@ const HeroSection = async () => {
             <Image
               src="/hero3.avif"
               alt="Hero Image"
-              className="h-[60vh] max-h-[500px] w-full object-cover grayscale"
+              className="h-[60vh] max-h-[500px] w-full object-cover"
               width={1368}
               height={446}
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+              quality={85}
+              loading="lazy"
             />
           </picture>
         </div>

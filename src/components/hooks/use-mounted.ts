@@ -4,7 +4,15 @@ const useMounted = () => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    // Use requestIdleCallback for better performance
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(() => {
+        setMounted(true);
+      });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(() => setMounted(true), 0);
+    }
   }, []);
 
   return mounted;

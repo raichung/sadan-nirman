@@ -8,6 +8,25 @@ export type SiteConfig = {
     author: string;
   };
   ogImage: string;
+  organization: {
+    name: string;
+    url: string;
+    logo: string;
+    description: string;
+    address: {
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      postalCode: string;
+      addressCountry: string;
+    };
+    contactPoint: {
+      telephone: string;
+      contactType: string;
+      areaServed: string;
+    };
+    sameAs: string[];
+  };
 };
 
 export type SubscriptionPlan = {
@@ -29,3 +48,14 @@ export type AddonType = {
   tags: string[];
   isOneTimeOnly: boolean;
 };
+
+// Extend Window interface for requestIdleCallback
+declare global {
+  interface Window {
+    requestIdleCallback?: (
+      callback: (deadline: IdleDeadline) => void,
+      options?: IdleRequestOptions,
+    ) => number;
+    cancelIdleCallback?: (id: number) => void;
+  }
+}
