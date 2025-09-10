@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import type { Metadata, Viewport } from "next";
+import dynamic from "next/dynamic";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
@@ -11,11 +12,19 @@ import { locales } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
 import Analytics from "@/components/analytics";
+import PerformanceOptimizer from "@/components/performance-optimizer";
 import Footer from "@/components/shared/footer";
 import Header from "@/components/shared/header";
-import ModalProvider from "@/components/shared/modal-provider";
 import StructuredData from "@/components/structured-data";
 import { ThemeProvider } from "@/components/theme-provider";
+
+// Dynamically import non-critical components
+const ModalProvider = dynamic(
+  () => import("@/components/shared/modal-provider"),
+  {
+    ssr: false,
+  },
+);
 
 const jakatra = Plus_Jakarta_Sans({
   subsets: ["latin", "latin-ext"],
@@ -98,18 +107,27 @@ const RootLayout = async ({
         <StructuredData />
         <link
           rel="canonical"
-          href={`${siteConfig.url.base}/${locale === "en" ? "" : locale}`}
+          href={`${siteConfig.url.base}${locale === "en" ? "" : `/${locale}`}`}
         />
         <link rel="alternate" href={`${siteConfig.url.base}/`} hrefLang="en" />
         <link
           rel="alternate"
-          href={`${siteConfig.url.base}/np/`}
+          href={`${siteConfig.url.base}/np`}
           hrefLang="ne"
         />
         <link
           rel="alternate"
           href={`${siteConfig.url.base}/`}
           hrefLang="x-default"
+        />
+        {/* Preload critical resources */}
+        <link rel="preload" href="/pic_01.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/hero2.avif" as="image" type="image/avif" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
         />
       </head>
       <body
@@ -130,6 +148,7 @@ const RootLayout = async ({
             <Toaster richColors />
             <ModalProvider />
             <Analytics />
+            <PerformanceOptimizer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

@@ -48,3 +48,14 @@ export type AddonType = {
   tags: string[];
   isOneTimeOnly: boolean;
 };
+
+// Extend Window interface for requestIdleCallback
+declare global {
+  interface Window {
+    requestIdleCallback?: (
+      callback: (deadline: IdleDeadline) => void,
+      options?: IdleRequestOptions,
+    ) => number;
+    cancelIdleCallback?: (id: number) => void;
+  }
+}
