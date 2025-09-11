@@ -16,6 +16,12 @@ export const viewport: Viewport = {
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => (
   <html lang="en" suppressHydrationWarning>
+    <head>
+      <meta
+        name="google-site-verification"
+        content="BHMDethgQKoqkclNYNMD1xeYxoEo1D4-BAII9E-2N7Y"
+      />
+    </head>
     <body>{children}</body>
   </html>
 );

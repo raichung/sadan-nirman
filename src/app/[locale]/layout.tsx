@@ -105,6 +105,10 @@ const RootLayout = async ({
     <html lang={locale === "np" ? "ne" : locale} suppressHydrationWarning>
       <head>
         <StructuredData />
+        <meta
+          name="google-site-verification"
+          content="BHMDethgQKoqkclNYNMD1xeYxoEo1D4-BAII9E-2N7Y"
+        />
         <link
           rel="canonical"
           href={`${siteConfig.url.base}${locale === "en" ? "" : `/${locale}`}`}
