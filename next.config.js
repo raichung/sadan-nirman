@@ -34,7 +34,8 @@ const nextConfig = {
     ],
   },
   experimental: {
-    optimizeCss: true,
+    // optimizeCss requires the 'critters' package which is not installed; disable to prevent build failures
+    optimizeCss: false,
     optimizePackageImports: ["react-icons"],
   },
   compiler: {

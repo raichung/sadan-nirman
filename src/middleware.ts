@@ -17,7 +17,7 @@ export const config = {
 
     `/(en|np)/:path*`,
 
-    // Enable redirects that add missing locales
-    "/((?!_next|_vercel|api|.*\\..*).*)",
+    // Enable redirects that add missing locales, but exclude Next special routes like /500 and /404
+    "/((?!_next|_vercel|api|.*\\..*|500$|404$).*)",
   ],
 };
