@@ -27,14 +27,14 @@ export const siteConfig: SiteConfig = {
     "Waterproofing solutions Kathmandu",
   ],
   url: {
-    base: env.NEXT_PUBLIC_APP_URL || "https://sadannirman.com.np",
+    base: env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np",
     author: "https://sahrohit.com.np",
   },
-  ogImage: `${env.NEXT_PUBLIC_APP_URL || "https://sadannirman.com.np"}/opengraph-image.jpg`,
+  ogImage: `${env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np"}/opengraph-image.jpg`,
   organization: {
     name: "Sadan Nirman Construction Company",
-    url: env.NEXT_PUBLIC_APP_URL || "https://sadannirman.com.np",
-    logo: `${env.NEXT_PUBLIC_APP_URL || "https://sadannirman.com.np"}/sadan_nirman_logo.png`,
+    url: env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np",
+    logo: `${env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np"}/sadan_nirman_logo.png`,
     description: "Leading construction and waterproofing company in Nepal",
     address: {
       streetAddress: "Anamnagar",
