@@ -33,19 +33,16 @@ const HeroSection = async () => {
           <ContactForm />
         </div>
         <div className="container -mb-48 py-10 md:py-16">
-          <picture className="h-[50vh] w-full">
-            <source srcSet="/hero2.avif" type="image/avif" />
-            <Image
-              fetchPriority="high"
-              src="/pic_01.jpg"
-              alt="Hero Image"
-              className="h-[60vh] w-full object-cover"
-              width={1368}
-              height={446}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
-              quality={85}
-            />
-          </picture>
+          <Image
+            fetchPriority="high"
+            src="/pic_01.jpg"
+            alt="Hero Image"
+            className="h-[60vh] w-full object-cover"
+            width={1368}
+            height={446}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+            quality={85}
+          />
         </div>
       </section>
 
@@ -66,19 +63,16 @@ const HeroSection = async () => {
         </div>
 
         <div className="container py-10">
-          <picture className="h-[50vh] max-h-[500px] w-full">
-            <source srcSet="/hero3.avif" type="image/avif" />
-            <Image
-              src="/pic_02.jpg"
-              alt="Hero Image"
-              className="h-[60vh] max-h-[500px] w-full object-cover"
-              width={1368}
-              height={446}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
-              quality={85}
-              loading="lazy"
-            />
-          </picture>
+          <Image
+            src="/pic_02.jpg"
+            alt="Hero Image"
+            className="h-[60vh] max-h-[500px] w-full object-cover"
+            width={1368}
+            height={446}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+            quality={85}
+            loading="lazy"
+          />
         </div>
       </section>
     </>

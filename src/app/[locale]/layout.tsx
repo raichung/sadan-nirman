@@ -122,7 +122,6 @@ const RootLayout = async ({
         />
         {/* Preload critical resources */}
         <link rel="preload" href="/pic_01.jpg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/hero2.avif" as="image" type="image/avif" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

@@ -111,16 +111,13 @@ const AboutPage = async () => {
                 </div>
               </div>
             </div>
-            <picture className="h-screen w-full self-center">
-              <source srcSet="/hero4.avif" type="image/avif" />
-              <Image
-                src="/pic_03.jpg"
-                alt="Hero Image"
-                className="h-screen w-full object-cover object-top"
-                width={1200}
-                height={1200}
-              />
-            </picture>
+            <Image
+              src="/pic_03.jpg"
+              alt="Hero Image"
+              className="h-screen w-full object-cover object-top"
+              width={1200}
+              height={1200}
+            />
           </div>
         </div>
       </section>
