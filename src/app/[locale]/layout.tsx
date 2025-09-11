@@ -97,33 +97,19 @@ const RootLayout = async ({
   children,
   params: { locale },
 }: RootLayoutProps) => {
-  if (!locales.includes(locale as "en" | "np")) notFound();
+  if (!locales.includes(locale as "en")) notFound();
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale === "np" ? "ne" : locale} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <StructuredData />
         <meta
           name="google-site-verification"
           content="BHMDethgQKoqkclNYNMD1xeYxoEo1D4-BAII9E-2N7Y"
         />
-        <link
-          rel="canonical"
-          href={`${siteConfig.url.base}${locale === "en" ? "" : `/${locale}`}`}
-        />
-        <link rel="alternate" href={`${siteConfig.url.base}/`} hrefLang="en" />
-        <link
-          rel="alternate"
-          href={`${siteConfig.url.base}/np`}
-          hrefLang="ne"
-        />
-        <link
-          rel="alternate"
-          href={`${siteConfig.url.base}/`}
-          hrefLang="x-default"
-        />
+        <link rel="canonical" href={`${siteConfig.url.base}`} />
         {/* Preload critical resources */}
         <link rel="preload" href="/pic_01.jpg" as="image" type="image/jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

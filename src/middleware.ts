@@ -14,10 +14,7 @@ export const config = {
   // Match only internationalized pathnames
   matcher: [
     "/",
-
-    `/(en|np)/:path*`,
-
-    // Enable redirects that add missing locales, but exclude Next special routes like /500 and /404
+    // Match all non-internal paths without injecting a locale prefix
     "/((?!_next|_vercel|api|.*\\..*|500$|404$).*)",
   ],
 };
