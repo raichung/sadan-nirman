@@ -34,7 +34,7 @@ export const siteConfig: SiteConfig = {
   organization: {
     name: "Sadan Nirman Construction Company",
     url: env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np",
-    logo: `${env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np"}/sadan_nirman_logo.png`,
+    logo: `${env.NEXT_PUBLIC_APP_URL ?? "https://sadannirman.com.np"}/logo-512.png`,
     description: "Leading construction and waterproofing company in Nepal",
     address: {
       streetAddress: "Anamnagar",

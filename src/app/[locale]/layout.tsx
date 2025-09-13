@@ -65,6 +65,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: siteConfig.name,
       },
+      {
+        url: siteConfig.organization.logo,
+        width: 512,
+        height: 512,
+        alt: `${siteConfig.organization.name} Logo`,
+      },
     ],
   },
   twitter: {
@@ -110,6 +116,30 @@ const RootLayout = async ({
           content="BHMDethgQKoqkclNYNMD1xeYxoEo1D4-BAII9E-2N7Y"
         />
         <link rel="canonical" href={`${siteConfig.url.base}`} />
+        {/* Favicon links for better search engine recognition */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link
+          rel="icon"
+          href="/favicon-32x32.png"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          rel="icon"
+          href="/favicon-16x16.png"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        {/* Additional meta tags for better search engine recognition */}
+        <meta property="og:site_name" content={siteConfig.organization.name} />
+        <meta property="og:image" content={siteConfig.organization.logo} />
+        <meta name="twitter:image" content={siteConfig.organization.logo} />
         {/* Preload critical resources */}
         <link rel="preload" href="/pic_01.jpg" as="image" type="image/jpeg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
